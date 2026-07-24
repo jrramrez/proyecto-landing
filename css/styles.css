@@ -1,0 +1,88 @@
+
+/* =========================
+   Variables globales
+   ========================= */
+
+:root {
+    --color-primary: #ff7434;  /* Color principal de la marca: botones y acentos */
+    --color-primary: #f1560e; /* Versión más oscura del color principal para hover */
+    --color-secondary: #0d0d0d;  /* Color secundario: textos fuertes y fondos oscuros */
+    --color-accent: #ffb84f;  /* Color de acento: detalles positivos o destacados */
+    --color-bg: #f4f4f4; /* Color de fondo general de la página */
+    --color-surface: #ffffff; /* Color de tarjetas, menús y paneles */
+    --color-muted: #f1f1f1; /* Color para textos secundarios */
+    --color-text: #1e293b; /* Color principal del texto */
+    --color-border: #e2e8f0; /* Color de bordes suaves */
+    --shadow: 0 18px 45px rgba(15, 23, 42, 0.10); /* Sombra reutilizable para tarjetas */
+    --radius: 22px; /* Radio de borde general para esquinas redondeadas */
+    --container: 1120px; /* Ancho máximo del contenido principal */
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "inter", system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: var(--color-bg); /* Aplica el color de fondo global */
+    color: var(--color-text); /* Aplica el color de texto principal */
+    line-height: 1.6; /* Aumenta la separación entre líneas para mejorar lectura */
+}
+
+.hero {
+    padding: 4rem 2rem 4rem 2rem; /* Padding aplicado Arriba | Derecha | Abajo | Izquierda */
+    background-image: 
+        /*linear-gradient(rgba(0,0,0,0.3), rgba(0, 0, 0, 0.3)),*/
+        linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)),
+
+        url('../img/ranger.png'); /* Aplica imagen de fondo en el contenedor seleccionado */
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-muted);
+}
+
+.hero-grid {
+  margin: 10rem 5rem 10rem 5rem;
+}
+
+.eyebrow {
+    text-align: center; /* Tipo de alineación de texto */
+    margin-bottom: 0.75rem; /* Separación debajo del texto pequeño */
+    color: var(--color-primary); /* Color principal para destacar */
+    font-size: 1.5rem; /* Texto pequeño tipo etiqueta */
+    font-weight: 800; /* Texto grueso */
+    letter-spacing: 0.12em; /* Separa letras para estilo editorial */
+    text-transform: uppercase; /* Convierte el texto a mayúsculas */
+}
+
+.hero h1,
+.page-hero h1 {
+    text-align: center;
+    color: var(--color-muted); /* Color oscuro para títulos importantes */
+
+    /* El signo + mezcla la flexibilidad de la pantalla con la accesibilidad del texto */
+    font-size: clamp(2.35rem, 10vw, 4.8rem); /* Tamaño adaptable entre mínimo y máximo */
+    
+    line-height: 1; /* Reduce separación entre líneas del título */
+    letter-spacing: -0.06em; /* Junta ligeramente letras para efecto moderno */
+    text-transform: uppercase;
+}
+
+.hero-description,
+.page-hero p {
+    text-align: center;
+    margin-top: 1.2rem; /* Separa el texto del título */
+    color: var(--color-muted); /* Color gris para texto secundario */
+    font-size: 1.08rem; /* Tamaño ligeramente mayor al texto normal */
+}
+
