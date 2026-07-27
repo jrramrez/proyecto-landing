@@ -25,31 +25,82 @@
             </div>
         </section>
 
-
         <section class="section" id="gear">
-            <div class="container">
+            <div class="section-header">
+                <h2>My gear</h2>
+            </div>
+
+            <div class="categories">
                 
-                <div class="section-header">
-                   <h2>My gear</h2>
+                <!-- Categoría 1 -->
+                <div class="category" style="background-image: url('img/LP\ 1.1.png');">
+                    Suspensión
                 </div>
-                
-                <img src="img/LP 1.png" alt="Portada categoría suspensión">
-                <img src="img/LP 2.png" alt="Portada categoría llantas">
-                <img src="img/LP 3.png" alt="Portada categoría frontline">
-                <img src="img/LP 4.png" alt="Portada categoría backline">
-                <img src="img/LP 5.png" alt="Portada categoría accesorios">
-                <img src="img/LP 6.png" alt="Portada categoría extras">
-     
+
+                <!-- Categoría 2 -->
+                <div class="category" style="background-image: url('img/LP\ 2.2.png');">
+                    Llantas
+                </div>
+
+                <!-- Categoría 3 -->
+                <div class="category" style="background-image: url('img/LP\ 3.3.png');">
+                    Frontline
+                </div>
+
+                <!-- Categoría 4 -->
+                <div class="category" style="background-image: url('img/LP\ 4.4.png');">
+                    Backline
+                </div>
+
+                <!-- Categoría 5 -->
+                <div class="category" style="background-image: url('img/LP\ 5.5.png');">
+                    Accesorios
+                </div>
+
+                <!-- Categoría 6 -->
+                <div class="category" style="background-image: url('img/LP\ 6.6.png');">
+                    Extras
+                </div>
+
             </div>
         </section>
 
+        <section class="collabs" id="contact-us">
+            <div class="section-contact">
+                <h3>Contacto para colaboraciones</h3>
+                <a href="https://www.instagram.com/west.grit" class="btn btn-primary">Let's create</a>
+            </div>
+
+        </section>
     </main>
-
     
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            // Configuración del observador de pantalla
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    // Si el elemento entra en el campo de visión del usuario
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        // Deja de observar el elemento una vez que ya apareció
+                        observer.unobserve(entry.target); 
+                    }
+                });
+            }, { 
+                threshold: 0.15, // Se activa cuando el 15% del elemento es visible
+                rootMargin: "0px 0px -50px 0px" // Margen inferior para activar la animación antes de que toque el borde
+            });
 
-    
-    <h3>Contacto para colaboraciones</h3>
-    <a href="https://www.instagram.com/west.grit">Let's create</a>
+            // Seleccionamos las tarjetas de categorías y el bloque de contacto
+            const elementosAAnimar = document.querySelectorAll('.category, .section-contact');
+
+            // Le asignamos la clase base de CSS y empezamos a observarlos
+            elementosAAnimar.forEach(el => {
+                el.classList.add('fade-in-element');
+                observer.observe(el);
+            });
+        });
+    </script>
 
 </body>
 </html>
